@@ -1,0 +1,44 @@
+/**
+ * @input A : String termination by '\0'
+ * 
+ * @Output Integer
+ */
+ int isPalindrome(char *A)
+ {
+    int i=0,l=0;
+    while(A[l]!='\0')
+    {
+        l++;
+    }
+    l--;
+    
+    while(i<=l)
+    {
+        if(A[i]!=A[l])
+            return 0;
+        i++;
+        l--;
+    }
+    return 1;
+ }
+ 
+int solve(char* A) 
+{
+    int i=0,l=0,c=0;
+    while(A[l]!='\0')
+    {
+        l++;
+    }
+    l--;
+    
+    while(strlen(A)>0)
+    {
+        if(isPalindrome(A))
+            return c;
+        c++;
+        A[l]='\0';
+        l--;
+    }
+    
+    return c;
+}
